@@ -23,3 +23,9 @@ jobs:
 
       - name: ng-build
         run: npm run build
+
+      - name: gogoLint
+        run: npm run lint
+
+      - name: gogoTest
+        run: npm run test
