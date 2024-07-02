@@ -1,0 +1,25 @@
+name: ci.test
+
+on: push 
+  
+jobs:
+  install:
+    name: СыАй
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout-бренч
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+      
+      - name: устанавливаем node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: install deeps
+        run: npm ci   
+
+      - name: ng-build
+        run: ng build
